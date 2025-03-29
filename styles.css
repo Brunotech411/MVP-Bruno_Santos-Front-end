@@ -19,7 +19,7 @@ body {
   color: #01010a; /* contraste com vídeo escuro */
 }
 
-/* Inputs e botão */
+/* Inputs */
 input {
   margin: 5px;
   padding: 8px;
@@ -27,9 +27,10 @@ input {
   border-radius: 5px;
 }
 
+/* Botões */
 button {
   padding: 8px 12px;
-  margin-left: 10px;
+  margin: 5px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -39,6 +40,11 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+/* Container dos botões */
+.botoes {
+  margin-top: 10px;
 }
 
 /* Tabela */
