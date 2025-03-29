@@ -44,10 +44,14 @@ async function adicionarInstrumento() {
   });
 
   if (response.ok) {
-    const novoInstrumento = await response.json();
     alert("Instrumento adicionado!");
     limparCampos();
-    if (listaVisivel) listarInstrumentos(); // recarrega toda a tabela para garantir integridade
+    listarInstrumentos();
+
+    // Garante que a tabela fique visível após adicionar
+    document.getElementById("tabela-container").style.display = "block";
+    listaVisivel = true;
+    document.getElementById("toggle-btn").innerText = "Ocultar Lista";
   } else {
     alert("Erro ao adicionar.");
   }
