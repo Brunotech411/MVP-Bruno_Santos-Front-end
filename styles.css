@@ -88,3 +88,13 @@ td button {
 td button:hover {
   background-color: darkred;
 }
+
+
+#toggle-btn {
+  background-color: #6f42c1;
+  color: white;
+}
+
+#toggle-btn:hover {
+  background-color: #5936a3;
+}
