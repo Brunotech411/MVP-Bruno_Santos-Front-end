@@ -98,3 +98,32 @@ td button:hover {
 #toggle-btn:hover {
   background-color: #5936a3;
 }
+
+.busca-tag {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#busca-tag {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+#btn-busca {
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#btn-busca:hover {
+  background-color: #5936a3;
+}

@@ -1,6 +1,5 @@
 const API_URL = 'http://localhost:5000';
 
-// Cria botão on/off para exibir lista
 let listaVisivel = false;
 
 function toggleLista() {
@@ -19,7 +18,6 @@ function toggleLista() {
   }
 }
 
-// Buscar e mostrar instrumentos na tabela
 async function listarInstrumentos() {
   const response = await fetch(`${API_URL}/instrumentos`);
   const data = await response.json();
@@ -40,7 +38,6 @@ async function listarInstrumentos() {
   });
 }
 
-// Adicionar instrumento
 async function adicionarInstrumento() {
   const tag = document.getElementById('tag').value;
   const lrv = parseFloat(document.getElementById('lrv').value);
@@ -57,13 +54,12 @@ async function adicionarInstrumento() {
 
   if (response.ok) {
     alert("Instrumento adicionado!");
-    listarInstrumentos();
+    if (listaVisivel) listarInstrumentos();
   } else {
     alert("Erro ao adicionar.");
   }
 }
 
-// Remover instrumento
 async function removerInstrumento(tag) {
   const confirmacao = confirm(`Deseja remover o instrumento ${tag}?`);
   if (!confirmacao) return;
@@ -74,11 +70,26 @@ async function removerInstrumento(tag) {
 
   if (response.ok) {
     alert("Removido!");
-    listarInstrumentos();
+    if (listaVisivel) listarInstrumentos();
   } else {
     alert("Erro ao remover.");
   }
 }
 
-// Iniciar listagem ao abrir
-listarInstrumentos();
+async function buscarPorTag() {
+  const tag = document.getElementById("busca-tag").value.trim();
+
+  if (!tag) {
+    alert("Digite uma TAG para buscar.");
+    return;
+  }
+
+  const response = await fetch(`${API_URL}/instrumento?tag=${encodeURIComponent(tag)}`);
+  const data = await response.json();
+
+  if (response.ok) {
+    alert(`Instrumento encontrado:\nTAG: ${data.tag}\nLRV: ${data.lrv}\nURV: ${data.urv}\nSPAN: ${data.span}`);
+  } else {
+    alert("Instrumento não encontrado.");
+  }
+}

@@ -14,20 +14,22 @@
   <h1>Instrumentos com "loop test" concluído</h1>
 
   <!-- Formulário -->
-<section id="formulario">
-  <div class="linha-form">
-    <input type="text" id="tag" placeholder="TAG (ex: PIT-3001)">
-    <input type="number" id="lrv" placeholder="LRV">
-    <input type="number" id="urv" placeholder="URV">
-    <input type="date" id="data_loop">
-    <button onclick="adicionarInstrumento()">Adicionar</button>
-  </div>
-  <div class="botoes">
-    <button onclick="toggleLista()" id="toggle-btn">Exibir Lista</button>
-  </div>
-</section>
-
-
+  <section id="formulario">
+    <div class="linha-form">
+      <input type="text" id="tag" placeholder="TAG (ex: PIT-3001)">
+      <input type="number" id="lrv" placeholder="LRV">
+      <input type="number" id="urv" placeholder="URV">
+      <input type="date" id="data_loop">
+      <button onclick="adicionarInstrumento()">Adicionar</button>
+    </div>
+    <div class="botoes">
+      <button onclick="toggleLista()" id="toggle-btn">Exibir Lista</button>
+    </div>
+    <div class="busca-tag">
+      <input type="text" id="busca-tag" placeholder="Buscar por TAG">
+      <button onclick="buscarPorTag()" id="btn-busca">🔍</button>
+    </div>
+  </section>
 
   <!-- Lista -->
   <div id="tabela-container" style="display: none;">
