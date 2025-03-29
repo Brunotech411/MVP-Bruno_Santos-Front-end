@@ -25,16 +25,7 @@ async function listarInstrumentos() {
   tbody.innerHTML = '';
 
   data.instrumentos.forEach(inst => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${inst.tag}</td>
-      <td>${inst.lrv}</td>
-      <td>${inst.urv}</td>
-      <td>${inst.span}</td>
-      <td>${inst.data_loop}</td>
-      <td><button onclick="removerInstrumento('${inst.tag}')">Remover</button></td>
-    `;
-    tbody.appendChild(row);
+    inserirInstrumentoNaTabela(inst);
   });
 }
 
@@ -53,11 +44,34 @@ async function adicionarInstrumento() {
   });
 
   if (response.ok) {
+    const novoInstrumento = await response.json();
     alert("Instrumento adicionado!");
-    if (listaVisivel) listarInstrumentos();
+    if (listaVisivel) inserirInstrumentoNaTabela(novoInstrumento);
+    limparCampos();
   } else {
     alert("Erro ao adicionar.");
   }
+}
+
+function inserirInstrumentoNaTabela(inst) {
+  const tbody = document.querySelector('#tabela tbody');
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td>${inst.tag}</td>
+    <td>${inst.lrv}</td>
+    <td>${inst.urv}</td>
+    <td>${inst.span}</td>
+    <td>${inst.data_loop}</td>
+    <td><button onclick="removerInstrumento('${inst.tag}')">Remover</button></td>
+  `;
+  tbody.appendChild(row);
+}
+
+function limparCampos() {
+  document.getElementById('tag').value = "";
+  document.getElementById('lrv').value = "";
+  document.getElementById('urv').value = "";
+  document.getElementById('data_loop').value = "";
 }
 
 async function removerInstrumento(tag) {
@@ -78,9 +92,12 @@ async function removerInstrumento(tag) {
 
 async function buscarPorTag() {
   const tag = document.getElementById("busca-tag").value.trim();
+  const container = document.getElementById("resultado-busca");
+
+  container.innerHTML = ""; // limpa o resultado anterior
 
   if (!tag) {
-    alert("Digite uma TAG para buscar.");
+    container.innerHTML = "<p style='color:white;'>Digite uma TAG para buscar.</p>";
     return;
   }
 
@@ -88,8 +105,17 @@ async function buscarPorTag() {
   const data = await response.json();
 
   if (response.ok) {
-    alert(`Instrumento encontrado:\nTAG: ${data.tag}\nLRV: ${data.lrv}\nURV: ${data.urv}\nSPAN: ${data.span}`);
+    const card = `
+      <div class="card-instrumento">
+        <p><strong>TAG:</strong> ${data.tag}</p>
+        <p><strong>LRV:</strong> ${data.lrv}</p>
+        <p><strong>URV:</strong> ${data.urv}</p>
+        <p><strong>SPAN:</strong> ${data.span}</p>
+        <p><strong>Data Loop:</strong> ${data.data_loop}</p>
+      </div>
+    `;
+    container.innerHTML = card;
   } else {
-    alert("Instrumento não encontrado.");
+    container.innerHTML = "<p style='color:white;'>Instrumento não encontrado.</p>";
   }
 }
