@@ -47,6 +47,20 @@ button:hover {
   margin-top: 10px;
 }
 
+/* Linha do formulário (inputs + botão adicionar) */
+.linha-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.linha-form input,
+.linha-form button {
+  margin: 5px;
+}
+
 /* Tabela */
 table {
   margin: 30px auto;
