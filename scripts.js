@@ -46,8 +46,8 @@ async function adicionarInstrumento() {
   if (response.ok) {
     const novoInstrumento = await response.json();
     alert("Instrumento adicionado!");
-    if (listaVisivel) inserirInstrumentoNaTabela(novoInstrumento);
     limparCampos();
+    if (listaVisivel) listarInstrumentos(); // recarrega toda a tabela para garantir integridade
   } else {
     alert("Erro ao adicionar.");
   }
