@@ -19,23 +19,25 @@
     <input type="number" id="lrv" placeholder="LRV">
     <input type="number" id="urv" placeholder="URV">
     <input type="date" id="data_loop">
-    <button onclick="adicionarInstrumento()">Adicionar</button>
+    <button onclick="toggleLista()">Exibir Lista</button>
   </section>
 
   <!-- Lista -->
-  <table id="tabela">
-    <thead>
-      <tr>
-        <th>TAG</th>
-        <th>LRV</th>
-        <th>URV</th>
-        <th>SPAN</th>
-        <th>Data</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <div id="tabela-container" style="display: none;">
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>TAG</th>
+          <th>LRV</th>
+          <th>URV</th>
+          <th>SPAN</th>
+          <th>Data</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
   <script src="scripts.js"></script>
 </body>

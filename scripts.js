@@ -1,5 +1,24 @@
 const API_URL = 'http://localhost:5000';
 
+// Cria botão on/off para exibir lista
+let listaVisivel = false;
+
+function toggleLista() {
+  const container = document.getElementById("tabela-container");
+  const botao = document.getElementById("toggle-btn");
+
+  if (listaVisivel) {
+    container.style.display = "none";
+    botao.innerText = "Exibir Lista";
+    listaVisivel = false;
+  } else {
+    listarInstrumentos();
+    container.style.display = "block";
+    botao.innerText = "Ocultar Lista";
+    listaVisivel = true;
+  }
+}
+
 // Buscar e mostrar instrumentos na tabela
 async function listarInstrumentos() {
   const response = await fetch(`${API_URL}/instrumentos`);
