@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Instrumentos</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Instrumentos</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Interface de Instrumentos</h1>
-<script src="scripts.js"></script>
+  <h1>Cadastro de Instrumentos</h1>
+
+  <!-- Formulário -->
+  <section>
+    <input type="text" id="tag" placeholder="TAG (ex: PIT-3001)">
+    <input type="number" id="lrv" placeholder="LRV">
+    <input type="number" id="urv" placeholder="URV">
+    <input type="date" id="data_loop">
+    <button onclick="adicionarInstrumento()">Adicionar</button>
+  </section>
+
+  <!-- Lista -->
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>TAG</th>
+        <th>LRV</th>
+        <th>URV</th>
+        <th>SPAN</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="scripts.js"></script>
 </body>
 </html>

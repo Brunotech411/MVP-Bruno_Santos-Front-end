@@ -1,1 +1,24 @@
-body { font-family: Arial; text-align: center; padding: 50px; }
+body {
+    font-family: Arial;
+    text-align: center;
+    padding: 30px;
+    background-color: #f4f4f4;
+  }
+  
+  input {
+    margin: 5px;
+    padding: 8px;
+  }
+  
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: white;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
