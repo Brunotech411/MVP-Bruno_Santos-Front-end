@@ -1,36 +1,70 @@
-body {
-    font-family: Arial;
-    text-align: center;
-    padding: 30px;
-    background-color: #f4f4f4;
-  }
-  
-  input {
-    margin: 5px;
-    padding: 8px;
-  }
-  
-  table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 80%;
-    background-color: white;
-  }
-  
-  th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
+/* Estilo do vídeo de fundo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.3; /* Ajuste conforme necessário para melhor contraste */
+}
 
-  #bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1; /* Fica atrás de todo o conteúdo */
-    object-fit: cover;
-    opacity: 0.5; /* opcional: deixa o conteúdo mais visível */
-  }
-  
-  
+/* Estilo do corpo */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+  background-color: transparent;
+  color: #ffffff; /* contraste com vídeo escuro */
+}
+
+/* Inputs e botão */
+input {
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Tabela */
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.6); /* fundo da tabela transparente escuro */
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #555;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+td button {
+  background-color: crimson;
+}
+
+td button:hover {
+  background-color: darkred;
+}
