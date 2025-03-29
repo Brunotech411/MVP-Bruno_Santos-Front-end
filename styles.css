@@ -21,4 +21,16 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
   }
+
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Fica atrás de todo o conteúdo */
+    object-fit: cover;
+    opacity: 0.5; /* opcional: deixa o conteúdo mais visível */
+  }
+  
   
