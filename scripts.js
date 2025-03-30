@@ -43,19 +43,21 @@ async function adicionarInstrumento() {
     body: JSON.stringify(body)
   });
 
-  if (response.ok) {
+  // Envia os dados do novo instrumento para a API.
+  // Se a resposta for positiva (status 200), atualiza a interface e limpa os campos.
+  // Caso contrário, exibe a mensagem de erro retornada pela API.
+    if (response.ok) {
     alert("Instrumento adicionado!");
     limparCampos();
     listarInstrumentos();
-
-    // Garante que a tabela fique visível após adicionar
     document.getElementById("tabela-container").style.display = "block";
     listaVisivel = true;
     document.getElementById("toggle-btn").innerText = "Ocultar Lista";
   } else {
-    alert("Erro ao adicionar.");
+    const erro = await response.json();
+    alert("Erro ao adicionar: " + erro.message);
   }
-}
+  
 
 function inserirInstrumentoNaTabela(inst) {
   const tbody = document.querySelector('#tabela tbody');
