@@ -30,34 +30,44 @@ async function listarInstrumentos() {
 }
 
 async function adicionarInstrumento() {
-  const tag = document.getElementById('tag').value;
-  const lrv = parseFloat(document.getElementById('lrv').value);
-  const urv = parseFloat(document.getElementById('urv').value);
+  const tag = document.getElementById('tag').value.trim();
+  const lrvStr = document.getElementById('lrv').value;
+  const urvStr = document.getElementById('urv').value;
   const data_loop = document.getElementById('data_loop').value;
+
+  // Validação simples de campos obrigatórios
+  if (!tag || !lrvStr || !urvStr || !data_loop) {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
+  const lrv = parseFloat(lrvStr);
+  const urv = parseFloat(urvStr);
 
   const body = { tag, lrv, urv, data_loop };
 
-  const response = await fetch(`${API_URL}/instrumento`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
-  });
+  try {
+    const response = await fetch(`${API_URL}/instrumento`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
 
-  // Envia os dados do novo instrumento para a API.
-  // Se a resposta for positiva (status 200), atualiza a interface e limpa os campos.
-  // Caso contrário, exibe a mensagem de erro retornada pela API.
     if (response.ok) {
-    alert("Instrumento adicionado!");
-    limparCampos();
-    listarInstrumentos();
-    document.getElementById("tabela-container").style.display = "block";
-    listaVisivel = true;
-    document.getElementById("toggle-btn").innerText = "Ocultar Lista";
-  } else {
-    const erro = await response.json();
-    alert("Erro ao adicionar: " + erro.message);
+      alert("Instrumento adicionado!");
+      limparCampos();
+      listarInstrumentos();
+      document.getElementById("tabela-container").style.display = "block";
+      listaVisivel = true;
+      document.getElementById("toggle-btn").innerText = "Ocultar Lista";
+    } else {
+      const erro = await response.json();
+      alert("Erro ao adicionar: " + JSON.stringify(erro, null, 2));
+    }
+  } catch (e) {
+    alert("Erro de rede ou servidor: " + e.message);
   }
-  
+}
 
 function inserirInstrumentoNaTabela(inst) {
   const tbody = document.querySelector('#tabela tbody');
