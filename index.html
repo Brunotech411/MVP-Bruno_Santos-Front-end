@@ -1,55 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR"> <!-- Define o idioma como português do Brasil -->
 <head>
-  <meta charset="UTF-8">
-  <title>Instrumentos</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"> <!-- Suporte a acentuação e caracteres especiais -->
+  <title>Instrumentos</title> <!-- Título da aba do navegador -->
+  <link rel="stylesheet" href="styles.css"> <!-- Importa o CSS de estilos -->
 </head>
 <body>
+
+  <!-- Vídeo de fundo da página -->
   <video autoplay muted loop id="bg-video">
     <source src="background.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo em HTML5.
+    Seu navegador não suporta vídeo em HTML5. <!-- Mensagem de fallback -->
   </video>
   
+  <!-- Título principal -->
   <h1>Instrumentos com "loop test" concluído</h1>
 
-  <!-- Formulário -->
+  <!-- Seção do formulário para adicionar instrumentos -->
   <section id="formulario">
     <div class="linha-form">
-      <input type="text" id="tag" placeholder="TAG (ex: PIT-3001)">
-      <input type="number" id="lrv" placeholder="LRV">
-      <input type="number" id="urv" placeholder="URV">
-      <input type="date" id="data_loop">
-      <button onclick="adicionarInstrumento()">Adicionar</button>
+      <!-- Campos do formulário -->
+      <input type="text" id="tag" placeholder="TAG (ex: PIT-3001)"> <!-- Identificação do instrumento -->
+      <input type="number" id="lrv" placeholder="LRV"> <!-- Valor LRV -->
+      <input type="number" id="urv" placeholder="URV"> <!-- Valor URV -->
+      <input type="date" id="data_loop"> <!-- Data da conclusão do loop -->
+      <button onclick="adicionarInstrumento()">Adicionar</button> <!-- Envia os dados para a API -->
     </div>
+
+    <!-- Botão para alternar exibição da tabela -->
     <div class="botoes">
       <button onclick="toggleLista()" id="toggle-btn">Exibir Lista</button>
     </div>
+
+    <!-- Campo e botão para busca por TAG -->
     <div class="busca-tag">
       <input type="text" id="busca-tag" placeholder="Buscar por TAG">
       <button onclick="buscarPorTag()" id="btn-busca">🔍</button>
     </div>
-    <!-- Resultado da busca exibido em card -->
+
+    <!-- Área onde será exibido o resultado da busca por TAG -->
     <div id="resultado-busca"></div>
   </section>
 
-  <!-- Lista -->
+  <!-- Container da tabela de instrumentos (inicia escondido) -->
   <div id="tabela-container" style="display: none;">
     <table id="tabela">
       <thead>
         <tr>
-          <th>TAG</th>
+          <th>TAG</th>     <!-- Cabeçalho das colunas -->
           <th>LRV</th>
           <th>URV</th>
           <th>SPAN</th>
           <th>Data</th>
-          <th>Ações</th>
+          <th>Ações</th>   <!-- Coluna com botão de remover -->
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody></tbody> <!-- Corpo da tabela preenchido dinamicamente via JS -->
     </table>
   </div>
 
+  <!-- Importa o script JavaScript -->
   <script src="scripts.js"></script>
 </body>
 </html>
