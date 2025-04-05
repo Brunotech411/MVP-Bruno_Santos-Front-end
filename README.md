@@ -33,6 +33,7 @@ MVP-Bruno_Santos-Front-end/
 ├── README.md          # Este arquivo
 ├── background.mp4     # Vídeo de fundo
 ├── index.html         # Página principal com layout e estrutura do app
+├── screenshot.png     # Imagem da interface em funcionamento
 ├── scripts.js         # Lógica JS: comunicação com API e DOM
 └── styles.css         # Estilos visuais do sistema
 ```
