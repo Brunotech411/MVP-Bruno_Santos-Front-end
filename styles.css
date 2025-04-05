@@ -1,25 +1,25 @@
 /* Estilo do vídeo de fundo */
 #bg-video {
-  position: fixed;
+  position: fixed;         /* Fixa o vídeo ao fundo da tela */
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  object-fit: cover;
-  opacity: 0.4; /* Ajuste conforme necessário para melhor contraste */
+  min-width: 100%;         /* Ocupa toda a largura */
+  min-height: 100%;        /* Ocupa toda a altura */
+  z-index: -1;             /* Fica atrás de todos os elementos */
+  object-fit: cover;       /* Cobre toda a tela sem distorcer */
+  opacity: 0.4;            /* Transparência para melhor contraste com o conteúdo */
 }
 
-/* Estilo do corpo */
+/* Estilo do corpo da página */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;  /* Fonte básica */
   text-align: center;
   padding: 30px;
-  background-color: transparent;
-  color: #01010a; /* contraste com vídeo escuro */
+  background-color: transparent;   /* Usa fundo do vídeo */
+  color: #01010a;                  /* Contraste escuro para melhor legibilidade */
 }
 
-/* Inputs */
+/* Estilo dos campos de entrada (inputs) */
 input {
   margin: 5px;
   padding: 8px;
@@ -27,27 +27,28 @@ input {
   border-radius: 5px;
 }
 
-/* Botões */
+/* Estilo padrão dos botões */
 button {
   padding: 8px 12px;
   margin: 5px;
-  background-color: #007bff;
+  background-color: #007bff;   /* Azul padrão */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
+/* Efeito ao passar o mouse sobre os botões */
 button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3;   /* Azul escuro */
 }
 
-/* Container dos botões */
+/* Container que agrupa os botões */
 .botoes {
   margin-top: 10px;
 }
 
-/* Linha do formulário (inputs + botão adicionar) */
+/* Layout em linha para inputs + botão de adicionar */
 .linha-form {
   display: flex;
   justify-content: center;
@@ -61,26 +62,29 @@ button:hover {
   margin: 5px;
 }
 
-/* Tabela */
+/* Estilo da tabela com dados dos instrumentos */
 table {
   margin: 30px auto;
   border-collapse: collapse;
   width: 90%;
-  background-color: rgba(0, 0, 0, 0.6); /* fundo da tabela transparente escuro */
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
   color: white;
   border-radius: 10px;
   overflow: hidden;
 }
 
+/* Estilo das células da tabela */
 th, td {
   padding: 12px;
-  border: 1px solid #555;
+  border: 1px solid #555;   /* Bordas mais suaves */
 }
 
+/* Cabeçalho da tabela */
 th {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Botões dentro da tabela (ex: remover) */
 td button {
   background-color: crimson;
 }
@@ -89,9 +93,9 @@ td button:hover {
   background-color: darkred;
 }
 
-
+/* Botão de exibir/ocultar lista */
 #toggle-btn {
-  background-color: #6f42c1;
+  background-color: #6f42c1; /* Roxo */
   color: white;
 }
 
@@ -99,6 +103,7 @@ td button:hover {
   background-color: #5936a3;
 }
 
+/* Área de busca por TAG */
 .busca-tag {
   margin-top: 20px;
   display: flex;
@@ -107,6 +112,7 @@ td button:hover {
   gap: 10px;
 }
 
+/* Input da busca */
 #busca-tag {
   padding: 8px;
   border-radius: 5px;
@@ -114,8 +120,9 @@ td button:hover {
   width: 200px;
 }
 
+/* Botão da busca */
 #btn-busca {
-  background-color: #6f42c1;
+  background-color: #6f42c1;   /* Roxo */
   color: white;
   border: none;
   padding: 8px 12px;
@@ -128,16 +135,23 @@ td button:hover {
   background-color: #5936a3;
 }
 
-
-/* Estilo do card de busca */
+/* Estilo do card com resultado da busca */
 .card-instrumento {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);  /* Fundo claro semi-transparente */
   border-radius: 10px;
   padding: 20px;
   width: 300px;
   margin: 20px auto;
-  color: #000;
+  color: #000;                /* Texto escuro */
   text-align: left;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);  /* Sombra leve */
+}
+
+/* Estilo para mensagens de erro ou instruções da busca */
+.mensagem-erro {
+  color: #070501;  /* Amarelo vibrante */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
 }
