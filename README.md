@@ -30,11 +30,11 @@ Este é o front-end do MVP da sprint desenvolvimento Full Stack básico (PUC-Rio
 ```
 MVP-Bruno_Santos-Front-end/
 │
-├── index.html         # Página principal com layout e estrutura do app
-├── styles.css         # Estilos visuais do sistema
-├── scripts.js         # Lógica JS: comunicação com API e DOM
+├── README.md          # Este arquivo
 ├── background.mp4     # Vídeo de fundo
-└── README.md          # Este arquivo
+├── index.html         # Página principal com layout e estrutura do app
+├── scripts.js         # Lógica JS: comunicação com API e DOM
+└── styles.css         # Estilos visuais do sistema
 ```
 
 ---
