@@ -34,8 +34,7 @@ MVP-Bruno_Santos-Front-end/
 ├── styles.css         # Estilos visuais do sistema
 ├── scripts.js         # Lógica JS: comunicação com API e DOM
 ├── background.mp4     # Vídeo de fundo
-├── README.md          # Este arquivo
-└── instrumentos.db    # (opcional, somente se quiser testar localmente com o back end)
+└── README.md          # Este arquivo
 ```
 
 ---
