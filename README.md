@@ -76,6 +76,14 @@ Rotas utilizadas:
 
 ---
 
+## 📷 Captura de tela
+
+Abaixo, a interface do sistema em funcionamento:
+
+<img src="screenshot.png" alt="Interface do sistema" width="800">
+
+---
+
 ## 🙌 Autor
 
 Bruno Leonardo Ramos dos Santos  
